@@ -1,0 +1,41 @@
+body {
+  font-size: 16px;
+  text-align: center;
+  background-color: khaki;
+}
+
+h1 {
+  font-size: 65px;
+  color: orange;
+  font-family: sans-serif;
+  font-style: italic;
+}
+
+li {
+  background-color: rgb(228, 200, 40);
+  font-style: unset;
+  text-align: start;
+  text-decoration:line-through rgb(226, 117, 14);
+}
+
+p {
+  font-weight: 600;
+  font-size: 3em;
+  font-style: oblique;
+}
+
+.cores {
+  background-color: rgb(226, 117, 14);
+}
+
+.amarelo {
+  background-color: yellow;
+}
+
+.vermelho {
+  background-color: red;
+}
+
+.marron {
+  background-color: brown;
+}
