@@ -1,0 +1,59 @@
+div:hover {
+  border: solid 2px black;
+}
+
+div:nth-child(3){
+  background-color: rgb(241, 241, 28);
+}
+
+div:nth-child(4){
+  background-color: rgb(15, 109, 7);
+}
+
+div:nth-child(5){
+  background-color: rgb(99, 13, 133);
+  height: 3em;
+}
+
+div:nth-child(6){
+  background-color: rgb(49, 49, 46);
+}
+
+div:nth-child(7){
+  background-color: rgb(158, 252, 95);
+}
+
+div:nth-child(3) h3{
+  text-align: center;
+  font-size: 25px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(180, 121, 10);
+}
+div:nth-child(4) h3{
+  text-align: center;
+  font-size: 25px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(10, 180, 81);
+}
+div:nth-child(5) h3{
+  text-align: center;
+  font-size: 25px;
+  font-family:monospace;
+  color: rgb(180, 10, 38);
+}
+div:nth-child(6) h3{
+  text-align: center;
+  font-size: 25px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(230, 223, 211);
+}
+div:nth-child(7) h3{
+  text-align: center;
+  font-size: 25px;
+  font-family:cursive;
+  color: rgb(30, 99, 2);
+}
+
+div:nth-child(odd) h3{
+  font-style: italic;
+}
