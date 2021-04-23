@@ -32,7 +32,7 @@ console.log('maior valor = ' + maior)
 
 // Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum,
 //  imprima a mensagem: "nenhum valor ímpar encontrado";
-let cont = 0 
+let cont = 0
 for (let i = 0; i < numbers.length; i++) {
   if (numbers[i] % 2 !== 0) cont++
 }
