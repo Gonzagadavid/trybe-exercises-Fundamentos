@@ -10,7 +10,6 @@ function verificaPalindrome (string) {
   }
   return string === stringInvertida
 }
-
 console.log(verificaPalindrome('arara'))
 // Retorno esperado: true
 console.log(verificaPalindrome('desenvolvimento'))
