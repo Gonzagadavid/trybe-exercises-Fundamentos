@@ -69,11 +69,17 @@ for (let index = 0; index < subtitulos.length; index += 1) {
 // removeChild();
 div3.parentElement.removeChild(div3);
 
-// Centralize o div criado no passo 6 (aquele que possui a classe right-content ).
+// 13- Centralize o div criado no passo 6 (aquele que possui a classe right-content ).
 // Dica: para centralizar, basta configurar o margin-right: auto do div;
+div4.style.margin = 'auto';
 
-// Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
-// Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+// 14- Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe
+// center-content ) para a cor verde;
+div2.style.backgroundColor = 'green';
+
+// 15- Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+lista.lastChild.remove();
+lista.lastChild.remove();
 // Adicione a tag div com a classe main-content como filho da tag body ;
 // Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
 // Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
