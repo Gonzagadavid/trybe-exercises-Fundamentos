@@ -274,6 +274,7 @@ function addTaskList(text) {
   li.className = 'li-task';
   li.innerHTML = text;
   taskList.appendChild(li);
+
   lisEvent();
 }
 
