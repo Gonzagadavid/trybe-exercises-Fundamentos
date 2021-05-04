@@ -188,6 +188,8 @@ function addTasks(string) {
   myTasks.appendChild(span);
 }
 
+addTasks('Projeto:');
+
 // Exercício 8:
 // Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior.
 // Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de
@@ -278,12 +280,14 @@ function addTaskList(text) {
   lisEvent();
 }
 
-const lisTask = document.getElementsByClassName('li-task');
-function lisEvent() {
-  for (let i = 0; i < lisTask.length; i++) {
-    lisTask[i].addEventListener('click', (e) => {
-      addTasks(e.target.innerHTML);
-      divTask('green');
-    });
-  }
-}
+divTask('green');
+
+// const lisTask = document.getElementsByClassName('li-task');
+// function lisEvent() {
+//   for (let i = 0; i < lisTask.length; i++) {
+//     lisTask[i].addEventListener('click', (e) => {
+//       addTasks(e.target.innerHTML);
+//       divTask('green');
+//     });
+//   }
+// }
