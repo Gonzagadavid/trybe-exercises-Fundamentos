@@ -184,22 +184,105 @@ switchFont('mouseout', arrayDay, '20px', '0');
 const myTasks = document.querySelector('.my-tasks');
 function addTasks(string) {
   const span = document.createElement('span');
-  span.innerHTML = string;
+  span.innerText = string;
   myTasks.appendChild(span);
 }
 
 // Exercício 8:
-// Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task .
+// Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior.
+// Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de
+// tag <div> com a classe task .
 // O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
+const tasks = document.getElementsByClassName('task');
+function divTask(color) {
+  const div = document.createElement('div');
+  div.className = 'task';
+  div.backgroundColor = color;
+  myTasks.appendChild(div);
+  selectTask(tasks);
+}
+
 // Exercício 9:
-// Implemente uma função que adiciona um evento que ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
-// Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+// Implemente uma função que adiciona um evento que ao clicar no elemento com a tag <div> referente a
+//  cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa
+// possuir a classe task selected ela estará selecionada.
+// Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task , ou seja,
+//  esta tarefa está deixando de ser uma tarefa selecionada.
+
+function selectTask(array) {
+  for (let i = 0; i < array.length; i++) {
+    array[i].addEventListener('click', (e) => {
+      if ([...e.target.classList].includes('selected')) {
+        e.target.classList.remove('selected');
+      } else {
+        e.target.classList.add('selected');
+      }
+    });
+  }
+}
+
+selectTask(tasks);
 // Exercício 10:
-// Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
-// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
+// Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, atribua
+//  a este dia a cor da legenda da sua tarefa selecionada.
+// Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial
+//  rgb(119,119,119) .
+
+const select = document.querySelector('.task selected');
+function taskDay(array, color1, color2) {
+  for (let i = 0; i < array.length; i++) {
+    array[i].addEventListener('click', (e) => {
+      newColor = newColor === color1 ? color2 : color1;
+      array[i].style.color = newColor;
+    });
+  }
+}
+
+taskDay(arrayDay, 'rgb(119,119,119)', 'green');
+
 // Bônus:
-// Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
-// Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+// Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um
+// compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar
+// no botão "ADICIONAR".
+// Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem
+//  de erro ao clicar em "ADICIONAR".
 // Ao pressionar a tecla "enter" o evento também deverá ser disparado.
 // Dica - Propriedade: keyCode .
+const taskInput = document.getElementById('task-input');
+const btnAdd = document.getElementById('btn-add');
+let text = '';
+
+function addTextInTasks() {
+  if (text === '') {
+    alert('Erro ao adicionar: campo de tarefa vazio');
+  }
+  addTaskList(text);
+}
+
+btnAdd.addEventListener('click', (e) => addTextInTasks(e));
+taskInput.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    addTextInTasks();
+  }
+  text = e.target.value;
+});
+
+const taskList = document.querySelector('.task-list');
+function addTaskList(text) {
+  const li = document.createElement('li');
+  li.className = 'li-task';
+  li.innerHTML = text;
+  taskList.appendChild(li);
+  lisEvent();
+}
+
+const lisTask = document.getElementsByClassName('li-task');
+function lisEvent() {
+  for (let i = 0; i < lisTask.length; i++) {
+    lisTask[i].addEventListener('click', (e) => {
+      addTasks(e.target.innerHTML);
+      divTask('green');
+    });
+  }
+}
