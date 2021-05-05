@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: 70px;
+}
+
+p {
+  width: 90%;
+  margin: auto;
+}
+
+.content {
+  margin: 0;
+  padding: 0px;
+}
+
+.format {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  margin: 0;
+}
+
+.format label {
+  margin: 0 5px 0 20px;
+}
+
+.input-number {
+  width: 60px
+}
