@@ -148,14 +148,19 @@ addBtn('Sexta-feira', buttonsContainer, 'btn-friday');
 // à configuração inicial exibindo os dias.
 const liFridays = document.getElementsByClassName('friday');
 const btnFridays = document.getElementById('btn-friday');
-eventAdd(
-  btnFridays,
-  'click',
-  switchColor,
-  'green',
-  'rgb(238,238,238)',
-  liFridays
-);
+
+function switchText(e, text, array, arrayFriday) {
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i].innerHTML === text) {
+      array[i].innerHTML = arrayFriday[i];
+    } else {
+      array[i].innerHTML = text;
+    }
+  }
+}
+
+eventAdd(btnFridays, 'click', switchText, 'SEXTOU!!!', liFridays, fridays);
+
 // Exercício 6:
 // Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do
 // mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o
