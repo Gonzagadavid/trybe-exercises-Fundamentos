@@ -7,8 +7,7 @@ const heigth = document.getElementById('height');
 const family = document.getElementById('family');
 let formatSave = {};
 
-// salve no localStoreage
-
+// salva os formatos alterado no localStoreage
 function save() {
   const formatJson = JSON.stringify(formatSave);
   localStorage.setItem('formatSave', formatJson);
@@ -25,7 +24,7 @@ function renderSave() {
 }
 renderSave();
 
-// torca a cor do texto
+// troca a cor do texto
 function switchColor(e) {
   let fontColor = e.target.value;
   container.style.color = fontColor;
