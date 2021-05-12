@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="#">
+    <div class="form-row">
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="form-line">
+          <label for="nome-text">Nome:</label>
+          <input type="text" name="nome" id="nome" maxlength="40" required>
+        </div>
+        <div class="form-line">
+          <label for="email-text">Email:</label>
+          <input type="text" name="email" id="email" maxlength="50" required>
+        </div>
+        <div class="form-line">
+          <label for="cpf-text">CPF:</label>
+          <input type="text" name="cpf" id="cpf" maxlength="11"  required>
+        <div class="form-line">
+          <label for="endereco-text">Endereço:</label>
+          <input type="text" name="endereco" id="endereco" maxlength="200"  required>
+        </div>
+        <div class="form-line">
+          <label for="cidade-text">Cidade:</label>
+          <input type="text" name="cidade" id="cidade" maxlength="28"  required>
+        </div>
+        <div class="form-line">
+          <label for="estado">Estado:</label>
+          <select name="estado" id="estado" required></select>
+        </div>
+        <div class="form-line">
+        <label for="casa"><input type="radio" name="residencia" id="casa" value="casa" checked>Casa</label>
+        <label for="apartamento"><input type="radio" name="residencia" id="apartamento" value="apartamento">Apartamento</label>
+      </fieldset>
+      <fieldset>
+        <legend>Dados do último emprego</legend>
+        <div class="form-line">
+          <textarea name="resumo-curriculo" id="curriculo" cols="30" rows="10" maxlength="1000" required>Resumo do currículo</textarea>
+        </div>
+          <label for="cargo">Cargo:</label>
+          <input type="text" id="cargo" maxlength="40" required>
+        <div class="form-line">
+          <label for="descricao-cargo">Descrição do cargo:</label>
+          <input type="text" name="descricao-cargo" id="decricao-cargo" cols="30" rows="10" maxlength="500" required>
+        </div>
+        <div class="form-line">
+          <label for="data-inicio">Data de ínicio</label>
+          <input type="text"  required pattern="([0-2][0-9]|[3][01])-(0[1-9]|1[0-2])-[0-9]{2}" id="data-inicio">
+        </div>  
+      </fieldset>
+      <button id='btn-submit'>Enviar</button>
+      <button type="reset" id="clear">Limpar</button>
+  </form>
+  <div id="curriculo-container"></div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
