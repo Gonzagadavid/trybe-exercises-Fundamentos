@@ -13,7 +13,10 @@ const dataInicio = document.getElementById('data-inicio');
 const btnSubmit = document.getElementById('btn-submit');
 const curriculoContainer = document.getElementById('curriculo-container');
 const btnClear = document.getElementById('clear');
-
+const erros = document.createElement('ul');
+const erroContainer = document.getElementById('erro-container');
+const regexDate = /([0-2][0-9]|[3][01])-(0[1-9]|1[0-2])-[0-9]{2}/g;
+const regexCPF = /\d{11}/g;
 const selectionState = document.getElementById('estado');
 const url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados';
 const myHeaders = new Headers();
@@ -23,29 +26,13 @@ const myInit = {
   mode: 'cors',
   cache: 'default',
 };
-
+let error = false;
 let obj = {};
+
 fetch(url, myInit)
   .then((resp) => resp.text())
   .then((resp) => JSON.parse(resp))
   .then((resp) => renderStates(resp));
-
-const curriculoPronto = `
-Nome: ${nome.value}  cpf: ${cpf.value}
-Email: ${email.value}
-Endereço: ${endereco.value}
-Cidade: ${cidade.value} Estado: ${estado.value}
-Residencia: ${apartamento.value === '' ? casa.value : apartamento.value}
-
-Resumo do curriculo:
-${curriculo.value}
-
-cargo: ${cargo.value} Data do inicio: ${dataInicio.value}
-
-descrição do cargo:
-${decricaoCargo.value}
-
-`;
 
 function renderStates(arrObjStates) {
   for (let index = 0; index < arrObjStates.length; index += 1) {
@@ -57,42 +44,70 @@ function renderStates(arrObjStates) {
   }
 }
 
-function submitForm(event) {
-  event.preventDefault();
-  if (nome.value === '') return alert('o campo nome é obrigatório');
-  if (!email.value.includes('@')) return alert('email inválido');
-  if (!/\d{11}/g.test(cpf.value)) {
-    return alert('use apenas digitos no campo do cpf');
-  }
-  if (endereco.value === '') return alert('o campo endereço é obrigatório');
-  if (cidade.value === '') return alert('o campo cidade é obrigatório');
-  if (curriculo.value === 'Resumo do currículo') {
-    return alert('o campo resumo do curriculo é obrigatório');
-  }
-  if (cargo.value === '') return alert('o campo cargo é obrigatório');
-  if (decricaoCargo.value === '') {
-    return alert('o campo descrição de cargo é obrigatório');
-  }
-  if (
-    !/([0-2][0-9]|[3][01])-(0[1-9]|1[0-2])-[0-9]{2}/g.test(dataInicio.value)
-  ) {
-    return alert('data com o formato inválido');
-  }
+let message = false;
 
+function checkEmpty(valor, msg) {
+  if (valor === '') {
+    const li = document.createElement('li');
+    li.innerHTML = `o campo ${msg} é obrigatório`;
+    erros.appendChild(li);
+    error = true;
+  }
+}
+
+function checkFormat(teste, msg) {
+  if (teste) {
+    const li = document.createElement('li');
+    li.innerHTML = msg;
+    erros.appendChild(li);
+    error = true;
+  }
+}
+
+function checkError() {
+  checkEmpty(nome.value, 'nome');
+  checkEmpty(endereco.value, 'endereço');
+  checkEmpty(cidade.value, 'cidade');
+  checkEmpty(cargo.value, 'cargo');
+  checkEmpty(decricaoCargo.value, 'descrição do cargo');
+
+  checkFormat(!email.value.includes('@'), 'email inválido');
+  checkFormat(!regexCPF.test(cpf.value), 'use apenas digitos no campo do cpf');
+  checkFormat(!regexDate.test(dataInicio.value), 'data com o formato inválido');
+  checkFormat(
+    curriculo.value === 'Resumo do currículo',
+    'o campo resumo do curriculo é obrigatório'
+  );
+  return error;
+}
+
+function renderErros() {
+  console.log('input');
+  erroContainer.appendChild(erros);
+}
+
+function renderCurriculo() {
   curriculoContainer.innerHTML = `
-    Nome: ${nome.value}     cpf: ${cpf.value}<br>
+    Nome: ${nome.value}<br>     
+    cpf: ${cpf.value}<br>
     Email: ${email.value}<br>
     Endereço: ${endereco.value}<br>
     Cidade: ${cidade.value} Estado: ${estado.value}<br>
-    Residencia: ${
-      apartamento.value === '' ? casa.value : apartamento.value
-    }<br><br>
+    Residencia: ${apartamento.value === '' ? casa.value : apartamento.value}<br>
     Resumo do curriculo:<br>
-    ${curriculo.value}<br><br>
-    cargo: ${cargo.value} Data do inicio: ${dataInicio.value}<br><br>
-    descrição do cargo:<br>
+    ${curriculo.value}<br>
+    Cargo: ${cargo.value} 
+    Data do inicio: ${dataInicio.value}<br><br>
+    Descrição do cargo:<br>
     ${decricaoCargo.value}<br>
   `;
+}
+function submitForm(event) {
+  event.preventDefault();
+  erros.innerHTML = '';
+  error = false;
+  if (checkError()) return renderErros();
+  return renderCurriculo();
 }
 
 btnSubmit.addEventListener('click', submitForm);
