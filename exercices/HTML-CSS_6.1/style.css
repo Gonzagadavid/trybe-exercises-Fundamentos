@@ -1,7 +1,7 @@
-#curriculo-container {
-  display: flex;
-}
-
 .form-line {
   padding: 15px;
+}
+
+textarea {
+  display: block;
 }
