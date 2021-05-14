@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  color: white;
+  background-color: rgb(46, 45, 45);
+}
+
+.header-content h3 {
+  text-decoration: underline;
+  color: rgb(204, 205, 207);
+
+}
+
+.paragraph {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.paragraph p {
+  padding: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 60%;
+  margin: auto;
+}
+
+.image-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #eee;
+  margin: 10px;
+  padding: 30px;
+  border-radius: 10%;
+  box-shadow: 2px 2px 5px rgb(104, 104, 104);
+}
+
+.image-card h4 {
+  display: block;
+  text-align: center;
+  background-color: #eee;
+  margin-bottom: 20px;
+  color: rgb(107, 106, 106);;
+}
+
+.foot-container {
+  width: 150px;
+  margin: 10px 0 0 560px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  justify-content: start;
+  padding: 10px;
+}
+
+hr{
+  width: 150px;
+  margin: 10px 0 0 550px;
+}
+.header-img {
+  width: 70px;
+}
+
+.gallery-img {
+  width: 150px;
+}
+
+.social-img {
+  width: 25px;
+  margin-left: 10px;
+}
