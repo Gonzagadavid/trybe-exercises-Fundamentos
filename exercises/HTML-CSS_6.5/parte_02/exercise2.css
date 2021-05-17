@@ -112,3 +112,25 @@ footer {
   font-size: 20px;
 }
 }
+
+@media (min-width: 1300px) {
+  .header-container p {
+    font-size: 35px;
+  }
+
+  .header-container li{
+    padding: 10px 30px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+.main-content p {
+  padding: 0 25px;
+}
+}
