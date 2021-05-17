@@ -84,3 +84,31 @@ footer {
   font-size: 15px;
   padding: 10px;
 }
+
+@media (min-width: 700px) {
+  
+  .header-container p {
+    font-size: 30px;
+    text-align: center;
+  }
+  
+.header-container ul {
+  justify-content: flex-start;
+}
+
+.header-container li{
+  padding: 10px;
+}
+
+.aside-one ul {
+  text-align: center;
+}
+
+.aside-two ul {
+  text-align: center;
+}
+
+footer {
+  font-size: 20px;
+}
+}
