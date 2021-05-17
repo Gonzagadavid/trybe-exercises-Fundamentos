@@ -85,7 +85,7 @@ footer {
   padding: 10px;
 }
 
-@media (min-width: 700px) {
+@media screen and (min-width: 700px) {
   
   .header-container p {
     font-size: 30px;
@@ -113,7 +113,7 @@ footer {
 }
 }
 
-@media (min-width: 1300px) {
+@media screen and (min-width: 1300px) {
   .header-container p {
     font-size: 35px;
   }

@@ -18,7 +18,7 @@ figure {
     margin: 0 0 20px;
 }
 
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
   body {
     text-align: center;
     background-color: rgb(110, 108, 108);
@@ -46,7 +46,7 @@ figure {
 
 }
 
-@media (min-width: 1300px) {
+@media screen and (min-width: 1300px) {
   body {
     background-color: rgb(12, 13, 53);
     font-size: 35px;
