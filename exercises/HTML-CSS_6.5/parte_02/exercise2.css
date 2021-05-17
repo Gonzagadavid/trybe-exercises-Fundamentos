@@ -1,0 +1,86 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-size: 20px;
+  background-color: rgb(11, 5, 34);
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+h3 {
+  padding: 10px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;  
+  align-content:space-around;
+  background-color: rgb(2, 27, 75);
+  color: white;
+}
+
+.header-container p {
+  font-size: 20px;
+  text-align: center;
+}
+
+
+
+.header-container ul {
+  display: flex;
+  padding: 30px 10px 0;
+  justify-content:space-between;
+  width: 100%;
+  font-size: 25px;
+}
+
+.aside-one {
+  padding: 20px;
+}
+
+.aside-one ul {
+  padding: 20px 0;
+  line-height: 1.5;
+}
+
+.aside-two ul {
+  padding: 20px 10px;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+.main-content p {
+  font-size: 25px;
+  padding: 0 15px;
+  line-height: 1.2;
+}
+
+footer {
+  text-align: center;
+  font-style: italic;
+  font-size: 15px;
+  padding: 10px;
+}
