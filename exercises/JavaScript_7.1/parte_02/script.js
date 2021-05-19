@@ -20,3 +20,12 @@ const longestWord = (string) =>
 console.log(
   longestWord('Antônio foi no banheiro e não sabemos o que aconteceu')
 ); // retorna 'aconteceu'
+
+// Crie uma página que contenha:
+// Um botão ao qual será associado um event listener ;
+// Uma variável clickCount no arquivo JavaScript que acumule o número de clicks no botão;
+// Um campo no HTML que vá atualizando a quantidade de clicks no botão conforme a variável
+// clickCount é atualizada.
+const count = document.getElementById('count');
+const btnCount = document.getElementById('btn-count');
+btnCount.addEventListener('click', () => (count.value = +count.value + 1));
