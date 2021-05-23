@@ -2,9 +2,9 @@
 // payable é o valor a ser pago, ou o valor total
 // paid é o valor que a pessoa pagou
 
-const calcChanges = (coins, change, remaining) => {
+const calcChanges = (coins, change, remaining, length) => {
   let value = remaining;
-  for (let index = 0; index < coins.length; index += 1) {
+  for (let index = 0; index < length; index += 1) {
     if (coins[index] <= value) {
       change.push(coins[index]);
       value -= coins[index];
@@ -22,7 +22,7 @@ function getChange(payable, paid) {
   // escreva seu código aqui...
   if (paid < payable) throw Error('paid value is not enough');
   if (remaining === 0) return change;
-  calcChanges(coins, change, remaining);
+  calcChanges(coins, change, remaining, length);
   return change;
 }
 
