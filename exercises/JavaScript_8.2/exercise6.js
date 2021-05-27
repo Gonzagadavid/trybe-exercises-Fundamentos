@@ -1,5 +1,5 @@
-import books from './books.js';
-import assert from 'assert';
+const books = require('./books.js');
+const assert = require('assert');
 
 // Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário.
 const expectedResult = true;

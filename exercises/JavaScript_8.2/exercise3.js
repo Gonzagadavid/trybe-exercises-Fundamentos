@@ -1,5 +1,5 @@
-import books from './books.js';
-import assert from 'assert';
+const books = require('./books.js');
+const assert = require('assert');
 
 // Encontre o primeiro livro cujo nome possui 26 caracteres.
 const expectedResult = {

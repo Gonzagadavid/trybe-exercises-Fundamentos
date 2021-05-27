@@ -1,5 +1,5 @@
-import books from './books.js';
-import assert from 'assert';
+const books = require('./books.js');
+const assert = require('assert');
 
 // Ordene os livros por data de lançamento em ordem decrescente.
 const expectedResult = [

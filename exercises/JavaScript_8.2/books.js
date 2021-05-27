@@ -61,5 +61,5 @@ const books = [
   },
 ];
 
-export default books;
+module.exports = books;
 // Adicione o código do exercício aqui:

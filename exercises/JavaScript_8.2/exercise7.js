@@ -1,5 +1,5 @@
-import books from './books.js';
-import assert from 'assert';
+const books = require('./books.js');
+const assert = require('assert');
 
 // Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
 const expectedResult = false;

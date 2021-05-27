@@ -1,5 +1,5 @@
-import books from './books.js';
-import assert from 'assert';
+const books = require('./books.js');
+const assert = require('assert');
 
 // Retorne o nome do livro de menor nome.
 // Dica: use a função forEach .

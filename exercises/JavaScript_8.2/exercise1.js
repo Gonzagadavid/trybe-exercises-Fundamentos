@@ -1,6 +1,5 @@
-import books from './books.js';
-// const assert = require('assert');
-import assert from 'assert';
+const books = require('./books.js');
+const assert = require('assert');
 
 // Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
 // Dica: use a função find .
