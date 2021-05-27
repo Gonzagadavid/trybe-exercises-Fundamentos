@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { filter } = require('./books.js');
 const books = require('./books.js');
 
 // Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
