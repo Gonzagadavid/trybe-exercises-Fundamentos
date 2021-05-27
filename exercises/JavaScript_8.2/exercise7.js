@@ -6,12 +6,13 @@ const expectedResult = false;
 
 function authorUnique() {
   const birthYears = [];
+  let bool = true;
   books.forEach((book) => {
     const birthYear = book.author.birthYear;
-    if (birthYears.some((year) => year === birthYear)) return true;
+    if (birthYears.some((year) => year === birthYear)) bool = false;
     birthYears.push(birthYear);
   });
-  return false;
+  return bool;
 }
 
 assert.strictEqual(authorUnique(), expectedResult);
