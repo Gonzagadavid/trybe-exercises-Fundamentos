@@ -5,6 +5,6 @@ const books = require('./books.js');
 // Dica: cada inicial termina com um ponto.
 const expectedResult = 'O Senhor dos Anéis';
 
-const authorWith3DotsOnName = () => books.filter(book => /^\w. \w. \w. \w+/g.test(book.author.name))[0].name
+const authorWith3DotsOnName = () => books.filter(book => /^(\w.\s){3}\w+/g.test(book.author.name))[0].name
 
 assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
