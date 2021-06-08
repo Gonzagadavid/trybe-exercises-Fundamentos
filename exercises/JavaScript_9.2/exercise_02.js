@@ -7,11 +7,11 @@
 // -Tente usar Higher Order Functions! Lembre-se de que tanto uma quanto a outra recebem, como parâmetro, funções!
 
 const promise = new Promise((resolve, reject) => {
-  const arrayRandom = Array(10)
+  const totalRandom = Array(10)
     .fill(0)
-    .map((zero) => Math.round(Math.random() * 50) ** 2);
-  const total = arrayRandom.reduce((sum, number) => sum + number);
-  total < 8000 ? resolve(total) : reject(`Promise rejeitada, total = ${total}`);
+    .map(() => Math.round(Math.random() * 50) ** 2)
+    .reduce((sum, number) => sum + number, 0);
+  totalRandom < 8000 ? resolve(totalRandom) : reject(`Promise rejeitada, totalRandom = ${totalRandom}`);
 })
-  .then((resp) => console.log(`Promise resolvida, total = ${resp}`))
+  .then((resp) => console.log(`Promise resolvida, totalRandom = ${resp}`))
   .catch((err) => console.log(err));
