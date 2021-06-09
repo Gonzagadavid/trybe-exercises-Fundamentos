@@ -1,7 +1,6 @@
 // apiScript.js
 const API_URL = 'https://icanhazdadjoke.com/';
-const p = document.createElement('p');
-document.body.appendChild(p);
+const render = document.getElementById('jokeContainer');
 const fetchJoke = () => {
   const myObject = {
     method: 'GET',
@@ -10,7 +9,7 @@ const fetchJoke = () => {
 
   fetch(API_URL, myObject)
     .then((response) => response.json())
-    .then((resp) => (p.innerHTML = resp.joke));
+    .then((resp) => (render.innerHTML = resp.joke));
 };
 
 window.onload = () => fetchJoke();
