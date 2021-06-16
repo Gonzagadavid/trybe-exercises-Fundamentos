@@ -8,11 +8,13 @@ const uppercase = (str, callback) => {
 describe('testes de funcionamento da função uppercase', () => {
   it('verifica se uppercase e uma funcao', () => expect(typeof uppercase).toBe('function'));
 
-  it('verifica se a funcao uppercase retorna a  palavra com todas as letras Maiucula', () => {
+  it('verifica se a funcao uppercase retorna a  palavra com todas as letras Maiucula', (done) => {
     uppercase('javascript', (str) => expect(str).toBe('JAVASCRIPT'));
+    done();
   });
 
-  it('verifica se retorna uma frase com todas as palavras com letras maiusculas', () => {
+  it('verifica se retorna uma frase com todas as palavras com letras maiusculas', (done) => {
     uppercase('this is javascript power', (str) => expect(str).toBe('THIS IS JAVASCRIPT POWER'));
+    done();
   });
 });
