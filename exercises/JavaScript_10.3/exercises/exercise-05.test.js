@@ -19,9 +19,14 @@ describe('atribuindo nova implementacao as funcoes', () => {
     expect(mockUpper).toHaveBeenCalledTimes(4);
 
     funcs.upperCase.mockRestore();
-    funcs.upperCase('javascript');
-    expect(funcs.upperCase('javascript')).toBe('JAVASCRIPT');
-    expect(funcs.upperCase('javascript testado')).toBe('JAVASCRIPT TESTADO');
-    expect(funcs.upperCase('javascript testado com jest')).toBe('JAVASCRIPT TESTADO COM JEST');
+    const mockUpperRestore = jest.spyOn(funcs, 'upperCase');
+    mockUpperRestore('javascript');
+    expect(mockUpperRestore).toHaveBeenCalledTimes(1);
+    expect(mockUpperRestore('javascript')).toBe('JAVASCRIPT');
+    expect(mockUpperRestore).toHaveBeenCalledTimes(2);
+    expect(mockUpperRestore('javascript testado')).toBe('JAVASCRIPT TESTADO');
+    expect(mockUpperRestore).toHaveBeenCalledTimes(3);
+    expect(mockUpperRestore('javascript testado com jest')).toBe('JAVASCRIPT TESTADO COM JEST');
+    expect(mockUpperRestore).toHaveBeenCalledTimes(4);
   });
 });
