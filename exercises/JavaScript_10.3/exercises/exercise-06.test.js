@@ -14,7 +14,7 @@ const resolveFake = {
 };
 
 describe('testa a requisicao da api dog pictures para sucesso e falha ', () => {
-  beforeEach(() => fetch.mockRestore());
+  beforeEach(() => fetch.mockReset());
 
   it('testa a resposta da requisicao com sucesso', async () => {
     expect.assertions(1);
